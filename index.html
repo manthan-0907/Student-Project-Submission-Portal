@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Project Submission Portal</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
+
+    <!-- HEADER -->
+    <header class="text-center text-white py-8">
+
+        <div class="text-6xl mb-3">🎓</div>
+
+        <h1 class="text-3xl md:text-5xl font-extrabold">
+            Student Project Submission Portal
+        </h1>
+
+        <p class="mt-3 text-lg">
+            ✨ Submit • Validate • Succeed ✨
+        </p>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="max-w-4xl mx-auto px-5 pb-10">
+
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+            <!-- TITLE -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600
+                        text-white text-center p-7">
+
+                <div class="text-4xl">📚</div>
+
+                <h2 class="text-2xl font-bold mt-2">
+                    Project Submission Form
+                </h2>
+
+                <p class="text-blue-100 mt-2">
+                    🚀 Enter your details and submit your project
+                </p>
+
+            </div>
+
+
+            <div class="p-6 md:p-10">
+
+
+                <!-- STUDENT DETAILS -->
+                <h3 class="text-2xl font-bold text-gray-800 mb-5">
+                    👨‍🎓 Student Information
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-5 mb-8">
+
+                    <!-- NAME -->
+                    <div>
+                        <label class="font-semibold">
+                            👤 Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            class="w-full mt-2 p-3 border-2 border-gray-200
+                            rounded-xl focus:border-blue-500 focus:outline-none">
+                    </div>
+
+
+                    <!-- ROLL -->
+                    <div>
+                        <label class="font-semibold">
+                            🔢 Roll Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="roll"
+                            placeholder="Enter roll number"
+                            class="w-full mt-2 p-3 border-2 border-gray-200
+                            rounded-xl focus:border-blue-500 focus:outline-none">
+                    </div>
+
+
+                    <!-- PROJECT TITLE -->
+                    <div class="md:col-span-2">
+                        <label class="font-semibold">
+                            💡 Project Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="Enter project title"
+                            class="w-full mt-2 p-3 border-2 border-gray-200
+                            rounded-xl focus:border-purple-500 focus:outline-none">
+                    </div>
+
+
+                    <!-- DEPARTMENT -->
+                    <div>
+                        <label class="font-semibold">
+                            🏫 Department
+                        </label>
+
+                        <select
+                            id="department"
+                            class="w-full mt-2 p-3 border-2 border-gray-200
+                            rounded-xl focus:border-purple-500 focus:outline-none">
+
+                            <option value="">Select Department</option>
+                            <option>💻 Computer Science</option>
+                            <option>🌐 Information Technology</option>
+                            <option>⚡ Electrical</option>
+                            <option>🔧 Mechanical</option>
+                            <option>🏗️ Civil</option>
+                            <option>📡 Electronics</option>
+
+                        </select>
+                    </div>
+
+
+                    <!-- SEMESTER -->
+                    <div>
+                        <label class="font-semibold">
+                            📖 Semester
+                        </label>
+
+                        <select
+                            id="semester"
+                            class="w-full mt-2 p-3 border-2 border-gray-200
+                            rounded-xl focus:border-purple-500 focus:outline-none">
+
+                            <option value="">Select Semester</option>
+                            <option>Semester 1</option>
+                            <option>Semester 2</option>
+                            <option>Semester 3</option>
+                            <option>Semester 4</option>
+                            <option>Semester 5</option>
+                            <option>Semester 6</option>
+                            <option>Semester 7</option>
+                            <option>Semester 8</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- FILE UPLOAD -->
+                <h3 class="text-2xl font-bold text-gray-800 mb-5">
+                    📁 Upload Project
+                </h3>
+
+                <div class="border-2 border-dashed border-blue-400
+                            bg-blue-50 rounded-2xl p-8 text-center
+                            hover:bg-purple-50 transition">
+
+                    <div class="text-6xl mb-4">
+                        ☁️
+                    </div>
+
+                    <h4 class="text-xl font-bold">
+                        Upload Your Project
+                    </h4>
+
+                    <p class="text-gray-500 mt-2">
+                        📄 PDF • ZIP • DOC • DOCX • PPT • PPTX
+                    </p>
+
+                    <label
+                        class="inline-block mt-5 px-7 py-3
+                        bg-gradient-to-r from-blue-600 to-purple-600
+                        text-white rounded-xl font-bold cursor-pointer
+                        hover:scale-105 transition shadow-lg">
+
+                        📂 Choose File
+
+                        <input
+                            type="file"
+                            id="file"
+                            class="hidden"
+                            accept=".pdf,.zip,.doc,.docx,.ppt,.pptx"
+                            onchange="validateFile()">
+
+                    </label>
+
+                    <p class="text-sm text-gray-400 mt-4">
+                        ⚠️ Maximum size: 20 MB
+                    </p>
+
+                    <p id="fileMessage" class="mt-4 font-bold"></p>
+
+                </div>
+
+
+                <!-- OR -->
+                <div class="flex items-center gap-4 my-8">
+
+                    <div class="h-1 bg-purple-200 flex-1 rounded"></div>
+
+                    <span class="font-bold text-purple-600">
+                        ✨ OR ✨
+                    </span>
+
+                    <div class="h-1 bg-pink-200 flex-1 rounded"></div>
+
+                </div>
+
+
+                <!-- LINK -->
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    🔗 Project Link
+                </h3>
+
+                <input
+                    type="url"
+                    id="link"
+                    placeholder="https://github.com/your-project"
+                    oninput="validateLink()"
+                    class="w-full p-4 border-2 border-gray-200
+                    rounded-xl focus:border-pink-500 focus:outline-none">
+
+                <p id="linkMessage" class="mt-3 font-bold"></p>
+
+
+                <!-- DECLARATION -->
+                <div class="bg-yellow-50 border border-yellow-200
+                            rounded-2xl p-5 mt-8 mb-7">
+
+                    <label class="flex gap-3 cursor-pointer">
+
+                        <input
+                            type="checkbox"
+                            id="agree"
+                            class="w-5 h-5 mt-1 accent-purple-600">
+
+                        <span class="text-gray-700">
+                            ✅ I confirm that this project is my original
+                            work and all information provided is correct.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    onclick="submitProject()"
+                    class="w-full py-4 rounded-2xl text-white text-xl
+                    font-bold bg-gradient-to-r from-blue-600
+                    via-purple-600 to-pink-500 shadow-xl
+                    hover:scale-105 active:scale-95 transition">
+
+                    🚀 Submit Project ✨
+
+                </button>
+
+                <p id="message"
+                   class="text-center font-bold text-lg mt-5">
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURE CARDS -->
+        <div class="grid md:grid-cols-3 gap-5 mt-7">
+
+            <div class="bg-white rounded-2xl p-6 text-center
+                        shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl">🔒</div>
+
+                <h3 class="font-bold text-lg mt-3">
+                    Secure
+                </h3>
+
+                <p class="text-gray-500">
+                    Safe submission
+                </p>
+
+            </div>
+
+
+            <div class="bg-white rounded-2xl p-6 text-center
+                        shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl">⚡</div>
+
+                <h3 class="font-bold text-lg mt-3">
+                    Fast
+                </h3>
+
+                <p class="text-gray-500">
+                    Quick validation
+                </p>
+
+            </div>
+
+
+            <div class="bg-white rounded-2xl p-6 text-center
+                        shadow-xl hover:-translate-y-2 transition">
+
+                <div class="text-4xl">🏆</div>
+
+                <h3 class="font-bold text-lg mt-3">
+                    Easy
+                </h3>
+
+                <p class="text-gray-500">
+                    Simple submission
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- SUCCESS POPUP -->
+    <div id="popup"
+         class="hidden fixed inset-0 bg-black/60
+                items-center justify-center p-5">
+
+        <div class="bg-white rounded-3xl p-8 text-center
+                    shadow-2xl max-w-sm w-full">
+
+            <div class="text-6xl mb-4">
+                🎉
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800">
+                Submission Successful!
+            </h2>
+
+            <p class="text-gray-500 mt-3">
+                ✅ Your project has been submitted successfully.
+            </p>
+
+            <button
+                onclick="closePopup()"
+                class="mt-6 px-8 py-3 rounded-xl
+                       bg-gradient-to-r from-blue-600
+                       to-purple-600 text-white font-bold
+                       hover:scale-105 transition">
+
+                👍 Done
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // =========================
+        // FILE VALIDATION
+        // =========================
+
+        function validateFile() {
+
+            let file = document.getElementById("file").files[0];
+
+            let message =
+                document.getElementById("fileMessage");
+
+            if (!file) {
+                message.innerHTML = "";
+                return;
+            }
+
+
+            // Maximum 20 MB
+            if (file.size > 20 * 1024 * 1024) {
+
+                message.innerHTML =
+                    "❌ File is too large! Maximum 20 MB.";
+
+                message.className =
+                    "mt-4 font-bold text-red-500";
+
+                return;
+            }
+
+
+            // Allowed file types
+            let allowed = [
+                "pdf",
+                "zip",
+                "doc",
+                "docx",
+                "ppt",
+                "pptx"
+            ];
+
+            let extension =
+                file.name.split(".").pop().toLowerCase();
+
+
+            if (!allowed.includes(extension)) {
+
+                message.innerHTML =
+                    "❌ Invalid file type!";
+
+                message.className =
+                    "mt-4 font-bold text-red-500";
+
+                return;
+            }
+
+
+            message.innerHTML =
+                "✅ File selected: " + file.name;
+
+            message.className =
+                "mt-4 font-bold text-green-600";
+        }
+
+
+        // =========================
+        // LINK VALIDATION
+        // =========================
+
+        function validateLink() {
+
+            let link =
+                document.getElementById("link").value;
+
+            let message =
+                document.getElementById("linkMessage");
+
+
+            if (link === "") {
+
+                message.innerHTML = "";
+                return;
+            }
+
+
+            try {
+
+                new URL(link);
+
+                message.innerHTML =
+                    "✅ Valid project link!";
+
+                message.className =
+                    "mt-3 font-bold text-green-600";
+
+            }
+
+            catch {
+
+                message.innerHTML =
+                    "❌ Enter a valid URL.";
+
+                message.className =
+                    "mt-3 font-bold text-red-500";
+            }
+
+        }
+
+
+        // =========================
+        // SUBMIT PROJECT
+        // =========================
+
+        function submitProject() {
+
+            let name =
+                document.getElementById("name").value.trim();
+
+            let roll =
+                document.getElementById("roll").value.trim();
+
+            let title =
+                document.getElementById("title").value.trim();
+
+            let department =
+                document.getElementById("department").value;
+
+            let semester =
+                document.getElementById("semester").value;
+
+            let file =
+                document.getElementById("file").files[0];
+
+            let link =
+                document.getElementById("link").value.trim();
+
+            let agree =
+                document.getElementById("agree").checked;
+
+            let message =
+                document.getElementById("message");
+
+
+            // Check student details
+            if (
+                name === "" ||
+                roll === "" ||
+                title === "" ||
+                department === "" ||
+                semester === ""
+            ) {
+
+                message.innerHTML =
+                    "⚠️ Please fill all student details.";
+
+                message.className =
+                    "text-center font-bold text-lg mt-5 text-red-500";
+
+                return;
+            }
+
+
+            // Check file or link
+            if (file === undefined && link === "") {
+
+                message.innerHTML =
+                    "📁 Upload a file OR 🔗 enter a project link.";
+
+                message.className =
+                    "text-center font-bold text-lg mt-5 text-red-500";
+
+                return;
+            }
+
+
+            // Check declaration
+            if (!agree) {
+
+                message.innerHTML =
+                    "☑️ Please accept the declaration.";
+
+                message.className =
+                    "text-center font-bold text-lg mt-5 text-red-500";
+
+                return;
+            }
+
+
+            // Show success popup
+            document.getElementById("popup")
+                .classList.remove("hidden");
+
+            document.getElementById("popup")
+                .classList.add("flex");
+
+        }
+
+
+        // =========================
+        // CLOSE POPUP
+        // =========================
+
+        function closePopup() {
+
+            document.getElementById("popup")
+                .classList.add("hidden");
+
+            document.getElementById("popup")
+                .classList.remove("flex");
+
+
+            // Clear form
+            document.getElementById("name").value = "";
+            document.getElementById("roll").value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("department").value = "";
+            document.getElementById("semester").value = "";
+            document.getElementById("file").value = "";
+            document.getElementById("link").value = "";
+            document.getElementById("agree").checked = false;
+
+            document.getElementById("fileMessage").innerHTML = "";
+            document.getElementById("linkMessage").innerHTML = "";
+            document.getElementById("message").innerHTML = "";
+
+        }
+
+    </script>
+
+</body>
+</html>
